@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /*
-1.编写控制器
+1.编写请求控制器
 2.配置自动扫描的包
  */
 @Controller

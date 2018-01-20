@@ -1,12 +1,16 @@
 package com.springmvc.entities;
 
+/*
+对应POJO
+ */
 public class User {
     private Integer id;
     private String username;
     private String password;
     private String email;
     private String age;
-    private String adderss;
+    //支持级联属性
+    private Adderss adderss;
 
     public void setPassword(String password) {
         this.password = password;
@@ -32,7 +36,7 @@ public class User {
         this.email = email;
     }
 
-    public String getAdderss() {
+    public Adderss getAdderss() {
         return adderss;
     }
 
@@ -40,7 +44,7 @@ public class User {
         return username;
     }
 
-    public void setAdderss(String adderss) {
+    public void setAdderss(Adderss adderss) {
         this.adderss = adderss;
     }
 

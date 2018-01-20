@@ -12,13 +12,17 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 
+
+//将user放到Session中
+//types 可以使用
+@SessionAttributes(value = {"user"},types = {String.class})            //只能放到整个控制器的最前面,对应/**springMvc处理模型数据**/中的方式三
+
+
+
 /*
 @RequestMapping不只能修饰类，还可以修饰方法
 主要作用：为控制器指定处理哪些URL请求
  */
-//将user放到Session中
-//types 可以使用
-@SessionAttributes(value = {"user"},types = {String.class})            //只能放到整个控制器的最前面
 @RequestMapping("/springMvc")
 @Controller
 public class SpringMvcTest {
@@ -40,25 +44,23 @@ public class SpringMvcTest {
         return SUCCESS;
     }
 
+
+
     /**
-     * @ModelAttribute
+     * @ModelAttribute：重要且难理解
+     * 使用场景：见视频17
      * @param id
      * @param map
      */
     /*
-     1. 有 @ModelAttribute 标记的方法, 会在每个目标方法执行之前被 SpringMVC 调用!
+     1. 有 @ModelAttribute 标记的方法, 会在每个目标方法执行之前被 SpringMVC 调用!（执行几个目标方法，就会被调用几次）
 	 * 2.(不是很重要) @ModelAttribute 注解也可以来修饰目标方法 POJO 类型的入参, 其 value 属性值有如下的作用:
 	 * 1). SpringMVC 会使用 value 属性值在 implicitModel 中查找对应的对象, 若存在则会直接传入到目标方法的入参中.
 	 * 2). SpringMVC 会以 value 为 key, POJO 类型的对象为 value, 存入到 request 中.
      */
     /*
     重要注释：@ModelAttribute
-    被其标注的方法，在每个目标方法执行之前都会被SpringMvc调用！
-    两个方法之间发生了什么？
-    运行流程：1.执行@ModelAttribute注释修饰的方法：从数据库中取出对象，把对象到map中，键为user
-    2.SpringMvc从Map中取出user对象，并将表单的请求参数赋给User对象的对应属性
-    3.SpringMvc把上述对象作为目标方法的参数
-    注意：存放map中的健的需要与目标方法入参类型的第一个小写字母写的字符串一致（可以改变）
+    注意：存放map中的键的默认与目标方法入参类型的第一个小写字母写的字符串一致（可以改变）
     如下：map.put("abd",user);
     public String testModelAttribute(@ModelAttribute("abc") User user)
      */
@@ -71,29 +73,41 @@ public class SpringMvcTest {
             User user=new User(1,"Tom","123456","12","2631478675@qq.com");
             System.out.println("从数据库获得一个对象");
             user.to();
-
+            //将user放入到map中去
             map.put("user",user);
         }
     }
+
+    /**
+     * 上下两个方法中间发生了什么？？？
+     * 1.执行@ModelAttribute注释修饰的方法：从数据库中取出对象，把对象到map中，键为user
+     * 2.SpringMvc从Map中取出user对象，并将表单的请求参数赋给User对象的对应属性
+     * 3.SpringMvc把上述对象作为目标方法的参数
+     * @param user
+     * @return
+     */
     @RequestMapping("/testModelAttribute")
     public String testModelAttribute(User user){
-        System.out.println("修改");
+        System.out.println("修改"+user);
         return  SUCCESS;
     }
 
+
+
+
+
+
+
     /**
      * springMvc处理模型数据
+     * mvc设计模式：发一个请求到目标处理器，目标处理器去调用业务方法，将业务方法的返回值在页面上显示出来
      * @return
-     */
-    /*
-    springMvc处理模型数据
-    mvc设计模式：发一个请求到目标处理器，目标处理器去调用业务方法，将业务方法的返回值在页面上
-    显示出来
      */
     /*
     方式一
     目标方法的返回值可以是ModelAndView类型
     其中包括视图和模型信息
+    SpringMvc会把modleandview中的modle中的数据放到request域对象中去
      */
     @RequestMapping("/testModelAndView")
     public ModelAndView testModelAndView() {
@@ -110,32 +124,52 @@ public class SpringMvcTest {
      */
     @RequestMapping("testMap")
     public String testMap(Map<String ,Object> map){
+        System.out.println(map.getClass().getName());
         map.put("names", Arrays.asList("Tom","Jerry"));
         return SUCCESS;
     }
+
+    /**
+     * @sessionAttribute的使用，注意：只能放在控制器的最开始
+     * @param map
+     * @return
+     */
     /*
     方式三：多个请求之间公用
-     */
-   /* @RequestMapping("/testSessionAttributes")
+   */
+  @RequestMapping("/testSessionAttributes")
     //将map放到了request中
     public String testSessionAttributes(Map<String,Object> map){
-        User user=new User("Tom","123456","13","2631478675@qq.com");
+        User user=new User(1,"Tom","13123","26","2631478675@qq.com");
+        //对应value,通过其将其放入session中
         map.put("user",user);
+        //对应type,通过其将其放入session中
         map.put("school","dianzikeda");
         return SUCCESS;
     }
+
+
+    /**
+     * 使用servlet原生的api作为目标方法的参数
+     */
     /*
-    使用servlet原生的api作为目标方法的参数
     mvc的handler所支持的有：
     HttpServletRequest,HttpServletResponse,HttpSession,
     Writer,Reader,OutputStream
      */
-    @RequestMapping("/testServletAPI")
     public String testServletAPI(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("testServletAPI" + request + "," + response);
         return SUCCESS;
     }
 
+
+
+
+    /**
+     * POJO：普通的Java类
+     * @param user
+     * @return
+     */
     /*比较重要
     POJO：普通的Java类
     SpringMvc确定目标方法POJO类型的入参过程：
@@ -155,15 +189,20 @@ public class SpringMvcTest {
         return SUCCESS;
     }
 
-    /*
-    了解：
-    映射一个Cookie值
+
+
+
+    /**
+     * （不常用）
+     * @CookieValue: 映射一个Cookie值
+     */
+
 
     @RequestMapping("/testCookieValue")
-    public String testCookieValue(@CookieValue){
-        System.out.println("testCookieValue:");
+    public String testCookieValue(@CookieValue(value = "JSESSIONID") String jsessioid){
+        System.out.println("testCookieValue:"+jsessioid);
         return SUCCESS;
-    }*/
+    }
     /*
     请求头：用得很少
 
@@ -172,46 +211,88 @@ public class SpringMvcTest {
         System.out.println("testRequestHeader");
         return SUCCESS;
     } */
+
+    /**
+     * @RequestMapping请求参数
+     * @param username
+     * @param age
+     * @return
+     */
     /*
-    重要：请求参数
+    重要！！！
        @RequestParam,映射请求参数：
        value：请求参数的参数名
        required = false ：该参数是否必须存在？
        eg:
         如果不带参数：@RequestParam(value="age" ,required = false) Integer age
-        defaultValue="0":请求参数的默认值
+        defaultValue="0":请求参数的默认值，让这个参数的默认值不再是null，而是0
      */
     @RequestMapping(value = "/testRequestParam")
     public String testRequestParam(@RequestParam(value = "username") String username, @RequestParam(value = "age", required = false) Integer age) {
         return SUCCESS;
     }
 
-    /*
-    如何发送put和delete请求？
-    1.需要配置HiddenHttpMethodFilter
-    2.需要发送post请求
-    3.
+    /**
+     * REST的使用：get,post,delete,put请求
+     * @param id
+     * @return
      */
+    /*
+    如何发送put（修改）和delete请求？
+    1.需要配置HiddenHttpMethodFilter
+    2.需要发送post（新增）请求,在转化成put,delete请求
+    3.需要在发送post增加一个隐藏域： <input type="hidden" name="_method" value="PUT"/>
+     */
+    //delete请求
+    @RequestMapping(value = "/testRest/{id}", method = RequestMethod.DELETE)
+    public String testRestDelete(@PathVariable Integer id) {
+        System.out.println("testRest get:" + id);
+        return SUCCESS;
+    }
+    //put请求
     @RequestMapping(value = "/testRest/{id}", method = RequestMethod.PUT)
     public String testRestPut(@PathVariable Integer id) {
-        System.out.println("testRest put:" + id);
+        System.out.println("testRest get:" + id);
+        return SUCCESS;
+    }
+    //post请求，没有参数
+    @RequestMapping(value = "/testRest", method = RequestMethod.POST)
+    public String testRest() {
+        System.out.println("testRest POST:" );
+        return SUCCESS;
+    }
+    //get（获取）请求
+    @RequestMapping(value = "/testRest/{id}", method = RequestMethod.GET)
+    public String testRest(@PathVariable Integer id) {
+        System.out.println("testRest get:" + id);
         return SUCCESS;
     }
 
+    /**
+     * @PathVariable的使用：可以映射URL中的占位符到目标方法中
+     * @param id
+     * @return
+     */
     @RequestMapping("/testPathVariable/{id}")
     public String testPathVariable(@PathVariable("id") Integer id) {
         System.out.println("testPathVariable");
         return SUCCESS;
     }
 
-    //使用params更加准确的
+    /**
+     * @RequestMapping的使用
+     * @RequestMapping支持ANT类型的通配符
+     * @return
+     */
+    //使用params对应请求参数
+    //包含username，且年龄不为10
     @RequestMapping(value = "/testParams", params = {"username", "age!=10"})
     public String testParams() {
         System.out.println("testParams");
         return SUCCESS;
     }
 
-    //使用method属性来制定请求方式
+    //使用method属性来指定请求方式
     @RequestMapping(value = "/testMethod", method = RequestMethod.POST)
     public String testMethod() {
         System.out.println("testMethod");
