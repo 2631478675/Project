@@ -11,7 +11,20 @@
     <title>$Title$</title>
   </head>
   <body>
-  <a href="/springMvc/testViewResolver">testViewResolver</a>
+
+  <!--
+  自定义视图
+  -->
+  <a href="/springMvc/testView">Test View </a>
+  <br><br>
+
+  <!--
+  视频，视频解析器
+  -->
+  <a href="/springMvc/testViewAndViewResolver">TestViewAndViewResolver</a>
+  <br><br>
+
+
 
   <!--
     模拟修改操作：1，原始数值：1,Tom,123456,2631478675@qq.com,12

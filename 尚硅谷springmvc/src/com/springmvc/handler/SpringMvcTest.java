@@ -29,14 +29,52 @@ public class SpringMvcTest {
     public static final String SUCCESS = "success";
 
     /**
+     * 见新建立的views包
+     * 自定义视图,这又出现了问题！！！
+     * @return
+     */
+    //
+    @RequestMapping("/testView")
+    public String testView(){
+        System.out.println("testView");
+        return "helloView";
+    }
+
+
+    /**
+     *
+     * 两大视图之JstlView
+     * 项目中使用了Jstl，SpringMvc会自动把视图由InternalResourceView转化为JstlView
+     * 前提：如果使用Jstl的fmt标签，则需要在SpringMvc的配置文件中配置国际化资源文件
+     */
+    /*
+    1.导入Jstl标签包：jstl,standard
+    2.创建.properties的文件
+    3.在success中导入jstl标签
+    4.配置国际化资源文件
+    为毛会出现乱码？？？将中文的用户名，密码改成那种为啥就行了，但是默认应为成了中文？？/
+     */
+    /**
+     * 标签mvc:view-controller
+     * 直接响应转发的页面，无需经过Handler
+     * 但是！！！会造成之前的映射方式（经过Handler）不好用
+     * 解决方法：配置mvc:annotation-driven标签
+     */
+
+
+
+
+    /**
      *
      * 视图和视图解析器
+     * InternalResourceViewResolver，InternalResourceView
      * @return
      */
     //视图的工作流程：
     /*
-    1.调用目标方法，返回一个String类型，或者是view类型或者是其他类型
-    SpringMvc都会将它转化为ModelAndView类型，通过视图解析器（InternalResourceViewResolver，是支持InternalResourceView的解析器）得到真正的物理视图（一个view(InternalResourceView,是搞jsp的（主要是搞在同一个web应用下，通过转发的那个结果）)对象），最终调用viewRander得到结果
+    1.调用目标方法，返回一个  String类型，或者是view类型或者是其他类型
+    SpringMvc都会将它转化为ModelAndView类型，通过视图解析器（InternalResourceViewResolver，是支持InternalResourceView的解析器）得到真正的物理视图
+    （一个view(InternalResourceView,是搞jsp的（主要是搞在同一个web应用下，通过转发的那个结果）)对象），最终调用viewRander得到结果
      */
     @RequestMapping("/testViewAndViewResolver")
     public String testViewAndViewResolver(){
@@ -46,8 +84,10 @@ public class SpringMvcTest {
 
 
 
+
+
     /**
-     * @ModelAttribute：重要且难理解
+     * @ModelAttribute：重要且难理解，视频20,21,22
      * 使用场景：见视频17
      * @param id
      * @param map

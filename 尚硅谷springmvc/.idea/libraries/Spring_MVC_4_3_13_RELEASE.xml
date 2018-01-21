@@ -7,6 +7,8 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-4.3.13.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-web-4.3.13.RELEASE.jar!/" />
       <root url="jar://C:/Program Files/Apache Software Foundation/Tomcat 8.5/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jar包/jakarta-taglibs-standard-1.1.2/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jar包/jakarta-taglibs-standard-1.1.2/lib/standard.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

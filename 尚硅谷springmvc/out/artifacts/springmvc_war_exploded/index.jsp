@@ -11,11 +11,25 @@
     <title>$Title$</title>
   </head>
   <body>
-  <a href="/springMvc/testViewResolver">testViewResolver</a>
+
+  <!--
+  自定义视图
+  -->
+  <a href="/springMvc/testView">Test View </a>
+  <br><br>
+
+  <!--
+  视频，视频解析器
+  -->
+  <a href="/springMvc/testViewAndViewResolver">TestViewAndViewResolver</a>
+  <br><br>
+
+
+
   <!--
     模拟修改操作：1，原始数值：1,Tom,123456,2631478675@qq.com,12
     2.密码不能被修改
-    3.
+    3.表单回显，模拟操作直接在表单上填写对应的属性值
   -->
   <form action="/springMvc/testModelAttribute" method="post">
       <input type="hidden" name="id" value="1"/>
@@ -27,15 +41,45 @@
       <br>
       <input type="submit" value="Submit"/>
   </form>
-  <br>
+  <br><br>
+
+
+
+
  <a href=" /springMvc/testSessionAttributes">testSessionAttributes</a>
  <br><br>
+
+
+  <!--
+  springMvc处理模型数据，方式二：目标方法的返回值为modlemap类型
+  -->
   <a href="/springMvc/testMap">testMap</a>
-  <br>
+  <br><br>
+
+  <!--
+  springMvc处理模型数据，方式一：目标方法的返回值为modleandview类型
+  -->
   <a href="/springMvc/testModelAndView">testModelAndView</a>
-  <br>
+  <br><br>
+
+
+
+
+
+
+
+
+
+  <!--
+  使用servlet原生的api作为目标方法的参数
+  -->
   <a href="/springMvc/testServletAPI">testServletAPI</a>
-  <br>
+  <br><br>
+
+
+  <!--
+    POJO的使用
+  -->
   <form action="/springMvc/testPojo" method="post">
     username:<input type="text" name="username"/>
     <br>
@@ -51,7 +95,9 @@
     <br>
     <input type="submit" value="Submit"/>
   </form>
-  <br>
+  <br><br>
+
+
 
   <!--
   @CookieValue的使用：
