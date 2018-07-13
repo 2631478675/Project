@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 配置数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/ecommerce" userId="root"
+			password="123456">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- pojo生成的位置 -->
+		<javaModelGenerator targetPackage="eCommerce.pojo"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!--映射文件mapper.xml生成的位置 -->
+		<sqlMapGenerator targetPackage="mapper" targetProject=".\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- dao层的位置-->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="eCommerce.dao" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<!-- table对应pojo-->
+		<table tableName="cart" domainObjectName="Cart"></table>
+		<table tableName="category" domainObjectName="Category"></table>
+		<table tableName="order" domainObjectName="Order"></table>
+		<table tableName="order_item" domainObjectName="OrderItem"></table>
+
+		<table tableName="pay_info" domainObjectName="payInfo"></table>
+		<table tableName="product" domainObjectName="Product"></table>
+		<table tableName="shipping" domainObjectName="Shipping"></table>
+		<table tableName="user" domainObjectName="User"></table>
+	</context>
+</generatorConfiguration>
