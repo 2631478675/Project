@@ -2,206 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="803fd393-95f4-4ed3-be3c-42da4f604068" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/artifacts/eCommerce_war.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/artifacts/eCommerce_war_exploded.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/compiler.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/encodings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__c3p0_c3p0_0_9_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_8.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_8.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__junit_junit_4_11.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_41.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_4_1_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_mybatis_mybatis_3_4_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_aop_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_beans_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_context_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_core_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_expression_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_test_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_tx_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_web_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_7_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Spring_4_3_18_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/libraries/Spring_MVC_4_3_18_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/eCommerce.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/aopalliance-1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-aop-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-aspects-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-beans-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-context-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-context-support-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-core-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-expression-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-instrument-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-instrument-tomcat-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-jdbc-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-jms-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-messaging-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-orm-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-oxm-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-test-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-tx-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-web-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-webmvc-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-webmvc-portlet-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/lib/spring-websocket-4.3.18.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/mbg.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/CartMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/CategoryMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/OrderItemMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/OrderMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/ProductMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/ShippingMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/UserMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/dao/payInfoMapper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/Cart.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/CartExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/Category.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/CategoryExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/Order.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/OrderExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/OrderItem.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/OrderItemExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/Product.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/ProductExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/ProductWithBLOBs.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/Shipping.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/ShippingExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/UserExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/payInfo.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/java/eCommerce/pojo/payInfoExample.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/db_config.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/dispatcher-servlet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/CartMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/CategoryMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/OrderItemMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/OrderMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/ProductMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/ShippingMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/UserMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mapper/payInfoMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/resources/mybatis-config.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/webapp/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/main/webapp/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/src/test/MBGTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/target/classes/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/target/classes/db_config.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/target/classes/dispatcher-servlet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/target/classes/mybatis-config.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/eCommerce/target/test-classes/MBGTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/web.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/artifacts/springmvc_war_exploded.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/encodings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/libraries/Spring_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/libraries/Spring_MVC_4_3_13_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/aopalliance-1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-context-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-core-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-test-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-web-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/lib/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/com/springmvc/entities/Adderss.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/com/springmvc/entities/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/com/springmvc/handler/HelloWorld.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/com/springmvc/handler/SpringMvcTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/com/springmvc/views/HelloView.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/i18n.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/i18n_en_US.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/classes/i18n_zh_CN.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/dispatcher-servlet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/jstl.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/servlet-api.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-aop-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-aspects-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-beans-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-context-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-context-support-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-core-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-expression-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-instrument-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-instrument-tomcat-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-jdbc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-jms-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-messaging-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-orm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-oxm-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-test-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-tx-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-web-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-webmvc-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-webmvc-portlet-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/spring-websocket-4.3.13.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/lib/standard.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/views/success.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/artifacts/springmvc_war_exploded/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/production/springmvc/com/springmvc/entities/Adderss.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/production/springmvc/com/springmvc/entities/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/production/springmvc/com/springmvc/handler/HelloWorld.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/out/production/springmvc/com/springmvc/handler/SpringMvcTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/springmvc.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/com/springmvc/entities/Adderss.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/com/springmvc/entities/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/com/springmvc/handler/HelloWorld.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/com/springmvc/handler/SpringMvcTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/com/springmvc/views/HelloView.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/i18n.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/i18n_en_US.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/src/i18n_zh_CN.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/web/WEB-INF/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/web/WEB-INF/dispatcher-servlet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/web/WEB-INF/views/success.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/web/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/尚硅谷springmvc/web/index.jsp" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -225,11 +28,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="22">
+                <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -267,6 +93,7 @@
         <option value="$PROJECT_DIR$/eCommerce/mbg.xml" />
         <option value="$PROJECT_DIR$/eCommerce/src/main/resources/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/eCommerce/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -474,7 +301,7 @@
       <workItem from="1531389341057" duration="85000" />
       <workItem from="1531390898421" duration="32000" />
       <workItem from="1531481163977" duration="9530000" />
-      <workItem from="1531547301984" duration="1362000" />
+      <workItem from="1531547301984" duration="2341000" />
     </task>
     <servers />
   </component>
@@ -490,10 +317,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16672000" />
+    <option name="totallyTimeSpent" value="17651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -506,7 +334,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42195767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.68879217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2328618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23933902" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -582,6 +410,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -648,6 +477,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -714,6 +544,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,6 +649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-418">
           <caret line="8" column="59" lean-forward="false" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,6 +679,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="22">
+            <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
