@@ -13,6 +13,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -74,6 +75,50 @@
   <sql id="Base_Column_List">
     id, username, password, email, phone, question, answer, role, create_time, update_time
   </sql>
+
+  <!--根据用户名返回查到的密码 -->
+  <select id="selectPasswordByUsername" parameterType="String" resultType="java.lang.String">
+    SELECT password FROM USER
+    WHERE username = #{username}
+  </select>
+
+  <!-- 根据用户名查找对象 -->
+  <select id="selectUserByUsername" parameterType="String" resultType="eCommerce.pojo.User">
+    SELECT * FROM USER
+    WHERE username = #{username}
+  </select>
+
+  <!-- 根据用户名查找注册者是否重复-->
+  <select id="selectCountByUsername" resultType="int" parameterType="String">
+    SELECT COUNT(1) FROM USER
+    WHERE username = #{username}
+  </select>
+
+
+  <!-- 根据用户名查找问题 -->
+  <select id="selectQuestionByUsername" resultType="String" parameterType="String">
+    SELECT question FROM USER
+    WHERE username = #{username}
+  </select>
+
+
+    <!-- 根据用户名和问题查找答案-->
+  <select id="judgeAnswerIsRight" resultType="String" parameterType="map">
+    SELECT answer FROM USER
+    WHERE username = #{username}
+    AND question = #{question}
+  </select>
+
+
+  <!-- 根据答案来重置密码 -->
+  <update id="resetPassword"  parameterType="map">
+    UPDATE USER
+    SET password = #{password}
+    WHERE username = #{username}
+    AND question = #{question}
+    AND answer = #{answer}
+  </update>
+
   <select id="selectByExample" parameterType="eCommerce.pojo.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
