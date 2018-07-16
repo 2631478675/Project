@@ -113,10 +113,16 @@
   <!-- 根据答案来重置密码 -->
   <update id="resetPassword"  parameterType="map">
     UPDATE USER
-    SET password = #{password}
+    SET password = #{password} , update_time = now()
     WHERE username = #{username}
-    AND question = #{question}
-    AND answer = #{answer}
+  </update>
+
+
+  <!-- 根据旧密码来更新新密码-->
+  <update id="resetPasswordByOldPassword" parameterType="map">
+    UPDATE USER
+    SET password = #{newPassword}, update_time = now()
+    WHERE password = #{oldPassword}
   </update>
 
   <select id="selectByExample" parameterType="eCommerce.pojo.UserExample" resultMap="BaseResultMap">

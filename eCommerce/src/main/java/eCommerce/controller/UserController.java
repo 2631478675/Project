@@ -1,5 +1,6 @@
 package eCommerce.controller;
 
+import eCommerce.common.Const;
 import eCommerce.common.Response;
 import eCommerce.pojo.User;
 import eCommerce.service.IUserService;
@@ -72,7 +73,42 @@ public class UserController {
     @PostMapping("resetPassword")
     @ResponseBody
     //第三步，通过新密码重置密码
-    public Response<String> resetPassword(@RequestBody User user){
-        return userService.resetPassword(user);
+    public Response<String> resetPassword(@RequestBody User user,  String token){
+        return userService.resetPassword(user,token);
     }
+
+
+
+    @PostMapping("resetPasswordAfterLogin")
+    @ResponseBody
+    public Response<String> resetPasswordAfterLogin(HttpSession session ,String oldPassword, String newPassword){
+
+        User userAfterLogin = (User) session.getAttribute(CURRENT_USER);
+        if(userAfterLogin == null){
+            return Response.createByErrorMessage("用户未登录");
+        }
+        return userService.resetPasswordAfterLogin(oldPassword,newPassword,userAfterLogin.getPassword());
+    }
+
+
+
+    //更新个人信息
+    //判断是否已经登录,user中没有id,id和username是不能更改的
+    @PostMapping("updateInfo")
+    @ResponseBody
+    public Response<User> updateInfo(@RequestBody User user,HttpSession session){
+        User currentUser = (User)session.getAttribute(CURRENT_USER);
+        if(currentUser == null){
+            return Response.createByErrorMessage("用户未登录");
+        }
+        user.setId(currentUser.getId());
+        user.setUsername(currentUser.getUsername());
+        user.setPassword(currentUser.getPassword());   //修改个人信息不包括修改密码
+        Response<User> userResponse = userService.updateInfo(user);
+        session.setAttribute(Const.CURRENT_USER,userResponse);
+        return userResponse;
+    }
+
+
+
 }

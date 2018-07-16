@@ -1,11 +1,13 @@
 package eCommerce.service.impl;
 
 import eCommerce.common.Response;
+import eCommerce.common.Token;
 import eCommerce.dao.UserMapper;
 import eCommerce.pojo.User;
 import eCommerce.service.IUserService;
 import eCommerce.util.DateUtil;
 import eCommerce.util.MD5Util;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import javax.xml.bind.SchemaOutputResolver;
 import java.util.Date;
+import java.util.UUID;
 
 import static eCommerce.common.Const.Role.ROLE_CUSTOME;
 
@@ -100,7 +103,13 @@ public class UserServiceImpl implements IUserService{
             String answer = userMapper.judgeAnswerIsRight(user.getUsername(),user.getQuestion());
 
             if(answer.equals(user.getAnswer())){
-                return Response.createBySuccessMessage("答案验证成功，请进行重置密码");
+
+                String token = UUID.randomUUID().toString();
+
+                Token.setKey(Token.TOKEN_PREFIX+user.getUsername(),token);
+
+                 logger.info(token);
+                return Response.createBySuccess("请重置密码",token);
             }
             return Response.createByErrorMessage("答案错误");
 
@@ -109,21 +118,59 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
-    public Response<String> resetPassword(User user) {
-        if(user.getUsername() != null && user.getAnswer() != null && user.getQuestion() != null && user.getPassword() != null){
-            //根据问题和用户名锁定数据库中的答案（注意，不要只使用问题）
+    public Response<String> resetPassword(User user,String token) {
+        if(user.getUsername() != null && user.getPassword() != null){
+            logger.info(token);
+            if(StringUtils.isBlank(token)){
+                return Response.createByErrorMessage("token为空，需要传递token");
+            }else {
+                //从缓存中取出token
+                String tokenCache = Token.getKey(Token.TOKEN_PREFIX+user.getUsername());
+                if(StringUtils.isBlank(tokenCache)){
+                    return Response.createByErrorMessage("token过期或者无效");
+                }
+                if(!StringUtils.equals(tokenCache,token)){
+                    return Response.createByErrorMessage("token错误，请重新获取");
+                }
+                int count = userMapper.resetPassword(MD5Util.MD5EncodeUtf8(user.getPassword()),user.getUsername());
 
-            int count = userMapper.resetPassword(user.getUsername(),user.getQuestion(),user.getAnswer(),user.getPassword());
-
-            System.out.println(count);
-            if(count != 0){
-                return Response.createBySuccessMessage("密码更改成功");
+                System.out.println(count);
+                if (count > 0) {
+                    return Response.createBySuccessMessage("密码更改成功");
+                }
+                return Response.createByErrorMessage("密码更改失败");
             }
-            return Response.createByErrorMessage("密码更改失败");
-
         }
-        return Response.createByErrorMessage("用户名或者问题或者答案或重置密码为空");
+        return Response.createByErrorMessage("用户名或重置密码为空");
     }
 
+    @Override
+    public Response<String> resetPasswordAfterLogin(String password, String newPassword ,String oldPassword) {
+        //防止越权，一定要拿到用户的旧密码
+        //password:前端传来的旧密码
+        //newPassword：前端传来的新密码
+        //oldPassword：session中的密码
+        //查看旧密码是否是对的(session中的旧密码和前端传来的密码比较),user中只有密码
+        if (!StringUtils.equals(oldPassword, MD5Util.MD5EncodeUtf8(password))) {
+            return Response.createByErrorMessage("旧密码错误");
+        }
+        //更新密码
+        int result = userMapper.resetPasswordByOldPassword(MD5Util.MD5EncodeUtf8(newPassword), oldPassword);
+        if (result > 0) {
+            return Response.createBySuccessMessage("更新密码成功");
+        }
+        return Response.createByErrorMessage("更新密码失败");
+    }
+
+    @Override
+    public Response<User> updateInfo(User user) {
+        //注意id和username是不能更改的,如果user中为空的属性，默认不进行修改，不修改密码
+        int resultCount = userMapper.updateByPrimaryKeySelective(user);
+        User updateUser = userMapper.selectByPrimaryKey(user.getId());
+        if(resultCount >0 ){
+            return Response.createBySuccess("修改个人信息成功",updateUser);
+        }
+        return Response.createByErrorMessage("修改个人信息失败");
+    }
 
 }

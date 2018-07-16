@@ -40,5 +40,7 @@ public interface UserMapper {
 
     String judgeAnswerIsRight(@Param("username")String username,@Param("question") String question);
 
-    int resetPassword(@Param("password") String password ,@Param("username")String username,@Param("question") String question, @Param("answer") String answer );
+    int resetPassword(@Param("password") String password ,@Param("username")String username);
+
+    int resetPasswordByOldPassword(@Param("newPassword") String newPassword , @Param("oldPassword")String oldPassword );
 }
