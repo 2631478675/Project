@@ -31,3 +31,5 @@ pom.xml.versionsBackup
 # node ignore
 node_modules/
 dist/
+
+bash.exe.stackdump
