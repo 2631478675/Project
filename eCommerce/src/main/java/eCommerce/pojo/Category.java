@@ -1,14 +1,18 @@
 package eCommerce.pojo;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Category {
     private Integer id;
 
+    //第二个id，相当于树形结构
     private Integer parentId;
 
+    //品类的名字，如：帽子，鞋子
     private String name;
 
+    //是否可用
     private Boolean status;
 
     private Integer sortOrder;
@@ -71,5 +75,19 @@ public class Category {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Category category = (Category) o;
+        return Objects.equals(id, category.id);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
     }
 }

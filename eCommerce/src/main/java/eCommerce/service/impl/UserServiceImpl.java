@@ -5,7 +5,6 @@ import eCommerce.common.Token;
 import eCommerce.dao.UserMapper;
 import eCommerce.pojo.User;
 import eCommerce.service.IUserService;
-import eCommerce.util.DateUtil;
 import eCommerce.util.MD5Util;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -13,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.Date;
 import java.util.UUID;
 
@@ -97,7 +95,7 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public Response<String> judgeAnswerIsRight(User user) {
-        if(user.getUsername() != null && user.getAnswer() != null && user.getQuestion() != null){
+        if(user.getUsername() != null || user.getAnswer() != null || user.getQuestion() != null){
             //根据问题和用户名锁定数据库中的答案（注意，不要只使用问题）
 
             String answer = userMapper.judgeAnswerIsRight(user.getUsername(),user.getQuestion());
@@ -119,7 +117,7 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public Response<String> resetPassword(User user,String token) {
-        if(user.getUsername() != null && user.getPassword() != null){
+        if(user.getUsername() != null || user.getPassword() != null){
             logger.info(token);
             if(StringUtils.isBlank(token)){
                 return Response.createByErrorMessage("token为空，需要传递token");

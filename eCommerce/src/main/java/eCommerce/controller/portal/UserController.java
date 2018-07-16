@@ -1,4 +1,4 @@
-package eCommerce.controller;
+package eCommerce.controller.portal;
 
 import eCommerce.common.Const;
 import eCommerce.common.Response;

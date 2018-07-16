@@ -71,6 +71,25 @@
   <sql id="Base_Column_List">
     id, parent_id, name, status, sort_order, create_time, update_time
   </sql>
+
+
+  <!-- 根据品类名字查找id-->
+  <select id="selectCategoryIdByName" resultType="int" parameterType="String">
+    SELECT id FROM category
+    WHERE name = #{name};
+  </select>
+
+  <!-- 根据品类名字查找子品类-->
+  <select id="selectChildrenCategoryByName" resultType="BaseResultMap" parameterType="String">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM category
+    WHERE parent_id = #{parentId}
+  </select>
+
+
+
+
   <select id="selectByExample" parameterType="eCommerce.pojo.CategoryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
