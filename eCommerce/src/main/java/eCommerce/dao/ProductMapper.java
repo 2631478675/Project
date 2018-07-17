@@ -34,4 +34,10 @@ public interface ProductMapper {
     int updateByPrimaryKeyWithBLOBs(ProductWithBLOBs record);
 
     int updateByPrimaryKey(Product record);
+
+    int updateStatusByProductName(ProductWithBLOBs product);
+
+    ProductWithBLOBs selectByName(String name);
+
+    List<ProductWithBLOBs> selectList();
 }

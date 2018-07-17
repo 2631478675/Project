@@ -81,6 +81,39 @@
   <sql id="Blob_Column_List">
     sub_images, detail
   </sql>
+
+
+
+
+
+  <!-- 根据商品名字更新商品的销售状态-->
+  <update id="updateStatusByProductName" parameterType="eCommerce.pojo.ProductWithBLOBs" >
+    UPDATE product
+    SET status = #{status}
+    WHERE name = #{name}
+  </update>
+
+  <!-- 根据商品的名字查询商品-->
+  <select id="selectByName" resultMap="ResultMapWithBLOBs" parameterType="String">
+    SELECT
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>
+    FROM product
+    WHERE name = #{name}
+  </select>
+
+
+
+  <!-- 查询所有商品，组成列表-->
+  <select id="selectList" resultMap="ResultMapWithBLOBs">
+    SELECT
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>
+    FROM product
+    WHERE name = #{name}
+  </select>
+
+
   <select id="selectByExampleWithBLOBs" parameterType="eCommerce.pojo.ProductExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">

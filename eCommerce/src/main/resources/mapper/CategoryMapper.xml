@@ -80,7 +80,7 @@
   </select>
 
   <!-- 根据品类名字查找子品类-->
-  <select id="selectChildrenCategoryByName" resultType="BaseResultMap" parameterType="String">
+  <select id="selectChildrenCategoryByName" resultMap="BaseResultMap" parameterType="int">
     SELECT
     <include refid="Base_Column_List"/>
     FROM category

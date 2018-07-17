@@ -1,6 +1,6 @@
 package eCommerce.dao;
 
-import eCommerce.common.Response;
+
 import eCommerce.pojo.Category;
 import eCommerce.pojo.CategoryExample;
 import java.util.List;
@@ -30,7 +30,6 @@ public interface CategoryMapper {
     int updateByPrimaryKey(Category record);
 
     List<Category> selectChildrenCategoryByName(int parentId);
-
 
     int selectCategoryIdByName(String name);
 }

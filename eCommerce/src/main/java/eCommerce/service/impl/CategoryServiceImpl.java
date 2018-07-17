@@ -19,12 +19,12 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public Response<Category> addCategory(Category category) {
-        if(StringUtils.isBlank(category.getName())|| category.getParentId() == null){
+        if(category.getName() == null|| category.getParentId() == null){
             return Response.createByErrorMessage("未能添加新品类，添加信息不完整");
         }
         category.setStatus(true);
         category.setCreateTime(new Date());
-        category.setCreateTime(new Date());
+        category.setUpdateTime(new Date());
         int result = categoryMapper.insert(category);
         if(result > 0) {
             return Response.createBySuccess("成功添加新品类",category);

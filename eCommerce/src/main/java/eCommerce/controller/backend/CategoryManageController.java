@@ -8,10 +8,7 @@ import eCommerce.pojo.User;
 import eCommerce.service.ICategoryService;
 import eCommerce.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -33,7 +30,7 @@ public class CategoryManageController {
     private ICategoryService categoryService;
 
 
-    @RequestMapping("addCategory")
+    @PostMapping("addCategory")
     @ResponseBody
     public Response<Category> addCategory(HttpSession session, @RequestBody Category category){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
@@ -48,7 +45,7 @@ public class CategoryManageController {
         return Response.createByErrorMessage("无权限操作");
     }
 
-    @RequestMapping("updateCategory")
+    @PostMapping("updateCategory")
     @ResponseBody
     public Response<String> updateCategory(HttpSession session,@RequestBody Category category){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
@@ -65,7 +62,7 @@ public class CategoryManageController {
     }
 
 
-    @RequestMapping("updateCategory")
+    @PostMapping("selectChildrenCategory")
     @ResponseBody
     //category只需传name即可
     public Response<List<Category>> selectChildrenCategory(HttpSession session, @RequestBody Category category){
@@ -80,7 +77,7 @@ public class CategoryManageController {
         return Response.createByErrorMessage("无权限操作");
     }
 
-    @RequestMapping("updateCategory")
+    @PostMapping("selectChildrenAndChildrenCategory")
     @ResponseBody
     //category只需传name即可
     public Response<List<Category>> selectChildrenAndChildrenCategory(HttpSession session, @RequestBody Category category){
