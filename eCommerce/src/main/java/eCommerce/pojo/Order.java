@@ -4,22 +4,31 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order {
+    //订单id
     private Integer id;
 
+    //唯一的国际的订单编号
     private Long orderNo;
 
+    //用户ID
     private Integer userId;
+
 
     private Integer shippingId;
 
+    //实际付款金额
     private BigDecimal payment;
 
+    //支付类型（默认都是线上支付：1）
     private Integer paymentType;
 
+    //运费
     private Integer postage;
 
+    //订单状态
     private Integer status;
 
+    //支付时间
     private Date paymentTime;
 
     private Date sendTime;

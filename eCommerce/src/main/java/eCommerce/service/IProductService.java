@@ -17,4 +17,6 @@ public interface IProductService {
     Response<ProductDetailVo> getDetailByName(ProductWithBLOBs product);
 
     Response<PageInfo> getProductList(int pageNum, int pageSize);
+
+
 }
