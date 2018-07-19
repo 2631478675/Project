@@ -12,11 +12,14 @@ import com.alipay.demo.trade.service.impl.AlipayTradeServiceImpl;
 import com.alipay.demo.trade.utils.ZxingUtils;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import eCommerce.common.Const;
 import eCommerce.common.Response;
 import eCommerce.dao.OrderItemMapper;
 import eCommerce.dao.OrderMapper;
+import eCommerce.dao.payInfoMapper;
 import eCommerce.pojo.Order;
 import eCommerce.pojo.OrderItem;
+import eCommerce.pojo.payInfo;
 import eCommerce.service.IOrderService;
 import eCommerce.util.BigDecimalUtil;
 import eCommerce.util.FTPUtil;
@@ -39,6 +42,9 @@ public class OrderServiceImpl implements IOrderService {
     private final static Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     private static AlipayTradeService tradeService;
+
+    @Autowired
+    private payInfoMapper infoMapper;
     static {
 
         /** 一定要在创建AlipayTradeService之前调用Configs.init()设置默认参数
@@ -121,7 +127,7 @@ public class OrderServiceImpl implements IOrderService {
         List<GoodsDetail> goodsDetailList = new ArrayList<GoodsDetail>();
 
         //将订单详情中的东西填充到商品明细中去
-        List<OrderItem> orderItemList = orderItemMapper.getByOrderNoUserId(orderNo,userId);
+        List<OrderItem> orderItemList = orderItemMapper.getByOrderNoUserId(orderNo,id);
         for(OrderItem orderItem : orderItemList){
             GoodsDetail goods = GoodsDetail.newInstance(orderItem.getProductId().toString(), orderItem.getProductName(),
                     BigDecimalUtil.mul(orderItem.getCurrentUnitPrice().doubleValue(),new Double(100).doubleValue()).longValue(),
@@ -178,13 +184,6 @@ public class OrderServiceImpl implements IOrderService {
                 resultMap.put("qrUrl",qrUrl);
                 return Response.createBySuccess(resultMap);
 
-
-
-
-
-
-
-
             case FAILED:
                 logger.error("支付宝预下单失败!!!");
                 return Response.createByErrorMessage("支付宝预下单失败!!!");
@@ -197,6 +196,47 @@ public class OrderServiceImpl implements IOrderService {
                 logger.error("不支持的交易状态，交易返回异常!!!");
                 return Response.createByErrorMessage("不支持的交易状态，交易返回异常!!!");
         }
+    }
+
+    /**
+     * 第五步：需要严格按照如下描述校验通知数据的正确性。
+     *商户需要验证该通知数据中的out_trade_no是否为商户系统中创建的订单号，并判断total_amount是否确实为该订单的实际金额（即商户订单创建时的金额），同时需要校验通知中的seller_id（或者seller_email) 是否为out_trade_no这笔单据的对应的操作方（有的时候，一个商户可能有多个seller_id/seller_email），上述有任何一个验证不通过，则表明本次通知是异常通知，务必忽略。
+     *在上述验证通过后商户必须根据支付宝不同类型的业务通知，正确的进行不同的业务处理，并且过滤重复的通知结果数据。
+     *在支付宝的业务通知中，只有交易通知状态为TRADE_SUCCESS或TRADE_FINISHED时，支付宝才会认定为买家付款成功。
+     * @param stringStringMap
+     * @return
+     */
+    @Override
+    public Response callBack(Map<String, String> stringStringMap) {
+        Long orderNo = Long.parseLong(stringStringMap.get("out_trade_no"));
+        String tradeNo = stringStringMap.get("trade_no");
+        //此交易状态来自支付宝的动态生成
+        String status = stringStringMap.get("trade_status");
+        //根据订单号查看相关订单是否存在
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        if(order ==null){
+            return Response.createByErrorMessage("订单为空，回调忽略");
+        }
+        //已支付，重复通知
+        if(order.getStatus()>= Const.OrderStatusEnum.PAID.getCode()){
+            return Response.createByErrorMessage("订单已支付,回调忽略");
+        }
+        //当交易通知为TRADE_SUCCESS时，买家付款成功，后端将status置成已支付，并更新相应的order
+        if(Const.Callback.TRADE_STATUS_TRADE_SUCCESS.equals(status)){
+            order.setStatus(Const.OrderStatusEnum.PAID.getCode());
+            orderMapper.updateByPrimaryKeySelective(order);
+        }
+        //订单信息，不懂这有啥用？
+        payInfo payInfo = new payInfo();
+        payInfo.setUserId(order.getUserId());
+        payInfo.setOrderNo(order.getOrderNo());
+        //支付平台
+        payInfo.setPayPlatform(Const.payPlatformEnum.ALIPAY.getCode());
+        payInfo.setPlatformNumber(tradeNo);
+        payInfo.setPlatformStatus(status);
+
+        infoMapper.insert(payInfo);
+        return Response.createBySuccess();
     }
 
     // 简单打印应答

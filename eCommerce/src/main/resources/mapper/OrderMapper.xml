@@ -79,6 +79,25 @@
     id, order_no, user_id, shipping_id, payment, payment_type, postage, status, payment_time, 
     send_time, end_time, close_time, create_time, update_time
   </sql>
+
+  <!-- 根据订单号查看订单-->
+  <select id="selectByOrderNo" resultMap="BaseResultMap" parameterType="Long">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM order
+    WHERE order_on = #{orderNo}
+  </select>
+
+
+  <!-- 根据用户id和订单号拿到相应的订单-->
+  <select id="selectByUserIdAndOrderNo" resultMap="BaseResultMap" parameterType="map">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM order
+    WHERE user_id =#{id}
+    AND order_no = #{orderNo}
+  </select>
+
   <select id="selectByExample" parameterType="eCommerce.pojo.OrderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
