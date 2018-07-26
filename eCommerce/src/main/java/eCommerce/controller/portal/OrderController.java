@@ -5,7 +5,9 @@ import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.demo.trade.config.Configs;
 import eCommerce.common.Const;
 import eCommerce.common.Response;
+import eCommerce.common.ResponseCode;
 import eCommerce.pojo.Order;
+import eCommerce.pojo.Shipping;
 import eCommerce.pojo.User;
 import eCommerce.service.IOrderService;
 import org.slf4j.Logger;
@@ -100,5 +102,29 @@ public class OrderController {
             return Const.Callback.RESPONSE_SUCCESS;
         }
         return Const.Callback.RESPONSE_FAILED;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //创建订单，参数为收货地址
+    @RequestMapping("create")
+    @ResponseBody
+    public Response createOrder(HttpSession session, @RequestBody Shipping shipping){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user ==null){
+            return Response.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
+        }
+        return orderService.createOrder(user.getId(),shipping.getId());
     }
 }
