@@ -269,7 +269,7 @@
                     <version>2.8.2</version>
                 </plugin>
 
-
+				<!--  此插件可保证编译时导入lib包中的包 -->
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
