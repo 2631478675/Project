@@ -9,4 +9,6 @@ public interface IOrderService {
     Response pay(Long orderNo,String path,Integer id);
 
     Response callBack(Map<String, String> stringStringMap);
+
+    Response createOrder(Integer id, Integer shippingId);
 }

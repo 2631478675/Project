@@ -71,6 +71,12 @@
   <sql id="Base_Column_List">
     id, user_id, product_id, quantity, checked, create_time, update_time
   </sql>
+  <select id="selectAllCartByUserId" resultMap="BaseResultMap" parameterType="int">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM cart
+    WHERE user_id = #{id}
+  </select>
   <select id="selectByExample" parameterType="eCommerce.pojo.CartExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

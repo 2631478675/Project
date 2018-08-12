@@ -14,12 +14,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import eCommerce.common.Const;
 import eCommerce.common.Response;
-import eCommerce.dao.OrderItemMapper;
-import eCommerce.dao.OrderMapper;
-import eCommerce.dao.payInfoMapper;
-import eCommerce.pojo.Order;
-import eCommerce.pojo.OrderItem;
-import eCommerce.pojo.payInfo;
+import eCommerce.dao.*;
+import eCommerce.pojo.*;
 import eCommerce.service.IOrderService;
 import eCommerce.util.BigDecimalUtil;
 import eCommerce.util.FTPUtil;
@@ -29,9 +25,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +43,13 @@ public class OrderServiceImpl implements IOrderService {
 
     @Autowired
     private payInfoMapper infoMapper;
+
+    @Autowired
+    private CartMapper cartMapper;
+
+    @Autowired
+    private ProductMapper productMapper;
+
     static {
 
         /** 一定要在创建AlipayTradeService之前调用Configs.init()设置默认参数
@@ -237,6 +242,59 @@ public class OrderServiceImpl implements IOrderService {
 
         infoMapper.insert(payInfo);
         return Response.createBySuccess();
+    }
+
+    @Override
+    public Response createOrder(Integer id, Integer shippingId) {
+        //从购物车中获取所有商品
+        List<Cart> carts = cartMapper.selectAllCartByUserId(id);
+
+        //查看仓库中有关购物车中商品的状态
+        Response response = this.getCartOrderItem(id,carts);
+        if(!response.isSuccess()){
+            return response;
+        }
+        List<OrderItem> orderItems = (List<OrderItem>) response.getData();
+
+        //计算总价
+//        BigDecimal payment = this.getOrderTotalPrice
+    }
+
+
+
+    /**
+     * 商店中的商品的信息：orderItem
+     * @param id
+     * @param carts
+     * @return
+     */
+    private Response getCartOrderItem(Integer id, List<Cart> carts) {
+        List<OrderItem> orderItems = new ArrayList<>();
+        if(CollectionUtils.isEmpty(carts)){
+            return Response.createByErrorMessage("购物车为空");
+        }
+        //每件商品的数量和商店中产品的状态
+        for(Cart cartItem : carts){
+
+            //orderItem和product的区别product为仓库中的商品包括数量等等
+            Product product = productMapper.selectByPrimaryKey(cartItem.getProductId());
+            if(Const.ProductStatusEnum.ON_SALE.getCode() != product.getStatus()){
+                return Response.createByErrorMessage("产品"+product.getName()+"不是在线售卖状态");
+            }
+            if(cartItem.getQuantity()>product.getStock()){
+                return Response.createByErrorMessage("产品"+product.getName()+"库存不足");
+            }
+            OrderItem orderItem = new OrderItem();
+            orderItem.setUserId(id);
+            orderItem.setProductId(product.getId());
+            orderItem.setProductName(product.getName());
+            orderItem.setProductImage(product.getMainImage());
+            orderItem.setCurrentUnitPrice(product.getPrice());
+            orderItem.setQuantity(cartItem.getQuantity());
+            orderItem.setTotalPrice(BigDecimalUtil.mul(product.getPrice().doubleValue(),cartItem.getQuantity()));
+            orderItems.add(orderItem);
+        }
+        return Response.createBySuccess(orderItems);
     }
 
     // 简单打印应答
