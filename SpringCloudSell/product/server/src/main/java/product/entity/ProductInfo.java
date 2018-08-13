@@ -15,6 +15,22 @@ import java.util.Date;
 @Entity
 public class ProductInfo {
 
+    @Override
+    public String toString() {
+        return "ProductInfo{" +
+                "productId='" + productId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", productStock=" + productStock +
+                ", productDescription='" + productDescription + '\'' +
+                ", productIcon='" + productIcon + '\'' +
+                ", productStatus=" + productStatus +
+                ", categoryType=" + categoryType +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
+
     @Id
     private String productId;
 

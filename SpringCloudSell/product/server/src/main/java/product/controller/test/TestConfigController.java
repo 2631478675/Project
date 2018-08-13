@@ -1,4 +1,4 @@
-package product.controller;
+package product.controller.test;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

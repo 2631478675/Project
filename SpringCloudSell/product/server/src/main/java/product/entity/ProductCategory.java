@@ -23,7 +23,16 @@ public class ProductCategory {
     private String categoryName;
 
     //种类编号
-    private Integer categoryType;
+    @Override
+    public String toString() {
+        return "ProductCategory{" +
+                "categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryType=" + categoryType +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }private Integer categoryType;
 
     private Date createTime;
 
