@@ -1,5 +1,6 @@
 package product.service;
 
+import product.VO.Response;
 import product.entity.ProductCategory;
 
 import java.util.List;
@@ -11,5 +12,5 @@ import java.util.List;
  */
 public interface CategoryService {
 
-    List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
+    Response<List<ProductCategory>> findByCategoryTypeIn(List<Integer> categoryTypeList);
 }

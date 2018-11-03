@@ -2,6 +2,7 @@ package product.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import product.VO.Response;
 import product.entity.ProductCategory;
 import product.repository.ProductCategoryRepository;
 import product.service.CategoryService;
@@ -16,7 +17,7 @@ public class CategoryServiceImpl implements CategoryService {
     private ProductCategoryRepository productCategoryRepository;
 
     @Override
-    public List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList) {
-        return productCategoryRepository.findByCategoryTypeIn(categoryTypeList);
+    public Response<List<ProductCategory>> findByCategoryTypeIn(List<Integer> categoryTypeList) {
+        return Response.createBySuccess(productCategoryRepository.findByCategoryTypeIn(categoryTypeList));
     }
 }

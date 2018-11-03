@@ -5,9 +5,7 @@ import product.entity.ProductCategory;
 
 import java.util.List;
 
-/**
- * Created by 刘元林
- */
+
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer> {
 
     /**

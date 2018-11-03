@@ -1,8 +1,12 @@
 package product.controller;
 
+import common.DecreaseStockInput;
+import common.ProductInfoOutput;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import product.VO.ProductInfoVO;
 import product.VO.ProductVO;
@@ -67,18 +71,18 @@ public class ProductController {
         return Response.createBySuccess(productVOList);
     }
 
-//    /**
-//     * 获取商品列表(给订单服务用的)
-//     * @param productIdList
-//     * @return
-//     */
-//    @PostMapping("/listForOrder")
-//    public List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList) {
-//        return productService.findList(productIdList);
-//    }
-//
-//    @PostMapping("/decreaseStock")
-//    public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {
-//        productService.decreaseStock(decreaseStockInputList);
-//    }
+    /**
+     * 获取商品列表(给订单服务用的)
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public Response<List<ProductInfoOutput>> listForOrder(@RequestBody List<String> productIdList) {
+        return productService.findList(productIdList);
+    }
+
+    @PostMapping("/decreaseStock")
+    public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {
+        productService.decreaseStock(decreaseStockInputList);
+    }
 }
